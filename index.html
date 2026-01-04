@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bernard A. Evangelista - LandBank</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background: linear-gradient(180deg, #05a23d 50%, #bed21c 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Add bg.png as overlay with screen blend mode on top of gradient */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('bg.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            mix-blend-mode: screen;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Logo and tagline moved outside the card */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            margin-bottom: 16px;
+        }
+
+        .logo img {
+            max-width: 280px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .tagline {
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+            line-height: 1.4;
+        }
+
+        /* Card styling updated */
+        .card {
+            background-color: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .section {
+            margin-bottom: 28px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .detail-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            align-items: flex-start;
+        }
+
+        .detail-icon {
+            font-size: 18px;
+            color: #05a23d;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .detail-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #05a23d;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            min-width: 120px;
+        }
+
+        .detail-value {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .save-btn {
+            width: 100%;
+            background-color: #05a23d;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Public Sans', sans-serif;
+            margin-top: 12px;
+        }
+
+        .save-btn:hover {
+            background-color: #048a33;
+        }
+
+        .save-btn:active {
+            transform: scale(0.98);
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 24px;
+            }
+
+            .logo img {
+                max-width: 240px;
+            }
+
+            .tagline {
+                font-size: 16px;
+            }
+
+            .detail-item {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .detail-label {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header moved outside card with logo and tagline -->
+        <div class="header">
+            <div class="logo">
+                <img src="logo-text-hor.png" alt="LandBank Logo">
+            </div>
+            <p class="tagline">Empowering Filipinos for a Better Future</p>
+        </div>
+
+        <div class="card">
+            <!-- Details Section -->
+            <div class="section">
+                <div class="section-title">Details</div>
+                <div class="detail-item">
+                    <div class="detail-icon">👤</div>
+                    <div>
+                        <div class="detail-label">Name:</div>
+                        <div class="detail-value">Bernard A. Evangelista</div>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">💼</div>
+                    <div>
+                        <div class="detail-label">Position:</div>
+                        <div class="detail-value">Department Manager / Branch Head</div>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">📍</div>
+                    <div>
+                        <div class="detail-label">Address:</div>
+                        <div class="detail-value">Cauayan Branch<br>Isabela Trade Center Bldg<br>Maharlika National Highway<br>Cauayan City, Isabela</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contacts Section -->
+            <div class="section">
+                <div class="section-title">Contacts</div>
+                <div class="detail-item">
+                    <div class="detail-icon">✉️</div>
+                    <div>
+                        <div class="detail-label">Work Email:</div>
+                        <div class="detail-value"><a href="mailto:BAEVANGELISTA@LANDBANK.COM" style="color: #05a23d; text-decoration: none;">BAEVANGELISTA@LANDBANK.COM</a></div>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">📞</div>
+                    <div>
+                        <div class="detail-label">Work Contact:</div>
+                        <div class="detail-value">
+                            <a href="tel:+63786522011" style="color: #05a23d; text-decoration: none;">(078) 652 2011</a><br>
+                            <a href="tel:+63786522101" style="color: #05a23d; text-decoration: none;">(078) 652 2101</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon">💬</div>
+                    <div>
+                        <div class="detail-label">Other Contact:</div>
+                        <div class="detail-value"><a href="tel:+639190022071" style="color: #05a23d; text-decoration: none;">+63 919 002 2071</a> (Viber)</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="save-btn" onclick="saveContact()">Save to Contacts</button>
+        </div>
+    </div>
+
+    <script>
+        function saveContact() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Bernard A. Evangelista
+TITLE:Department Manager / Branch Head
+ORG:Land Bank of the Philippines
+ADR;TYPE=WORK:;;Isabela Trade Center Bldg;Maharlika National Highway;Cauayan City;Isabela;Philippines
+EMAIL;TYPE=WORK:BAEVANGELISTA@LANDBANK.COM
+TEL;TYPE=WORK,VOICE:(078) 652 2011
+TEL;TYPE=WORK,VOICE:(078) 652 2101
+TEL;TYPE=OTHER:+63 919 002 2071
+NOTE:Viber: +63 919 002 2071
+END:VCARD`;
+
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/vcard;charset=utf-8,' + encodeURIComponent(vcard));
+            element.setAttribute('download', 'Bernard_Evangelista.vcf');
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+    </script>
+</body>
+</html>
